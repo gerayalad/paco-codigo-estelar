@@ -537,7 +537,7 @@ const AnoPersonalSection = () => (
 
       {/* Explicación */}
       <div className="glass-card mb-6">
-        <p className="title-item accent-gold mb-3">¿Por qué 2025 si es para 2026?</p>
+        
         <p className="body-secondary mb-3">
           En numerología, el Año Personal se calcula con el <span className="accent-gold font-medium">año universal</span> (2025), pero se vive principalmente <span className="accent-cyan font-medium">de cumpleaños a cumpleaños</span>. Como tu cumpleaños es en noviembre, esta energía 11 te acompañará desde <span className="font-medium">noviembre 2025 hasta noviembre 2026</span>.
         </p>
@@ -548,17 +548,13 @@ const AnoPersonalSection = () => (
 
       {/* Main Card */}
       <div className="glass-card-highlight mb-6">
-        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-start">
-          <div className="text-center sm:text-left flex-shrink-0">
-            <div className="number-big">11</div>
-            <p className="accent-purple font-semibold mt-2">Número Maestro</p>
-          </div>
-          <div className="stack-sm flex-1">
-            <p className="body-text">
-              Tu Año Personal 11 es un año de <span className="accent-purple font-medium">despertar, intuición, señales y expansión de conciencia</span>. No es el año más "lineal" o "fácil" para controlar, pero sí puede ser uno de los más poderosos para alinearte con tu propósito.
-            </p>
-          </div>
+        <div className="text-center mb-4">
+          <div className="number-big">11</div>
+          <p className="accent-purple font-semibold mt-2">Número Maestro</p>
         </div>
+        <p className="body-text">
+          Tu Año Personal 11 es un año de <span className="accent-purple font-medium">despertar, intuición, señales y expansión de conciencia</span>. No es el año más "lineal" o "fácil" para controlar, pero sí puede ser uno de los más poderosos para alinearte con tu propósito.
+        </p>
       </div>
 
       {/* Grid de energías */}
