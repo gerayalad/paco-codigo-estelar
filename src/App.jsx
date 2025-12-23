@@ -248,6 +248,9 @@ const HeroSection = () => (
       <div className="section-header">
         <p className="label accent-cyan mb-3">Tu Código Estelar</p>
         <h1 className="title-main">Resumen Estelar:<br />Tu Siguiente Capítulo</h1>
+        <p className="body-secondary mt-4" style={{ maxWidth: '540px', margin: '1rem auto 0' }}>
+          Este es tu mapa personal basado en astrología y numerología. Explora tu <span className="accent-cyan">Carta Natal</span>, descubre tus <span className="accent-purple">Números del Destino</span>, conoce la energía de tu <span className="accent-gold">Año Personal 2025</span>, y encuentra tus <span className="accent-pink">Regalos Energéticos</span>.
+        </p>
       </div>
 
       <div className="glass-card-highlight stack-md fade-in">
