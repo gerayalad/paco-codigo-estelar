@@ -4,7 +4,7 @@ import './index.css'
 
 // ==================== CAROUSEL COMPONENT ====================
 
-const Carousel = ({ children, hint = false }) => {
+const Carousel = ({ children }) => {
   const carouselRef = useRef(null)
   const [activeIndex, setActiveIndex] = useState(0)
   const childCount = Array.isArray(children) ? children.length : 1
@@ -27,7 +27,7 @@ const Carousel = ({ children, hint = false }) => {
 
   return (
     <>
-      <div ref={carouselRef} className={`carousel ${hint ? 'carousel-hint' : ''}`}>
+      <div ref={carouselRef} className="carousel">
         {children}
       </div>
       <div className="carousel-indicators">
@@ -256,8 +256,7 @@ const HeroSection = () => (
         </p>
 
         <p className="body-text accent-gold" style={{ fontWeight: 500 }}>
-          El mensaje de tus astros para este momento no es tomarte de tus raíces, y atreverte a extender tus ramas.
-        </p>
+Tus astros te invitan hoy a soltar el refugio de tus raíces y tener la valentía de extender tus ramas hacia el cielo.        </p>
 
         <p className="body-text">
           Ya dominas el arte de cuidar y sostener a los demás; lo haces con maestría. Ahora, el universo te invita a que uses esa misma fuerza para construir tus propios sueños y tu propio legado <span className="inline-accent">(Sol en Escorpio/Casa 10)</span>. No se trata de elegir entre ellos o tú; se trata de entender que tú también mereces ese cuidado y esa dedicación que le das a todos.
@@ -295,7 +294,7 @@ const CartaNatalSection = () => (
       <div className="mb-8">
         <h3 className="title-section text-center mb-4">1. La Tríada de Personalidad</h3>
 
-        <Carousel hint>
+        <Carousel>
           {/* Sol */}
           <div className="carousel-card glass-card">
             <div className="flex items-start gap-3 mb-4">

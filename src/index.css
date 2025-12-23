@@ -798,28 +798,6 @@ body {
   background: var(--color-accent-cyan);
 }
 
-/* Swipe hint animation (first time) */
-.carousel-hint {
-  position: relative;
-}
-
-.carousel-hint::after {
-  content: '';
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 40px;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(5, 5, 16, 0.8));
-  pointer-events: none;
-}
-
-@media (min-width: 1024px) {
-  .carousel-hint::after {
-    display: none;
-  }
-}
 
 /* ========================================
    NUMBERS
