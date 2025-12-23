@@ -1,6 +1,46 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Sun, Moon, Compass, Brain, Heart, Zap, Target, Sparkles, Eye, Star, Home, MapPin, Hash, Gift, Calendar, Lock } from 'lucide-react'
 import './index.css'
+
+// ==================== CAROUSEL COMPONENT ====================
+
+const Carousel = ({ children, hint = false }) => {
+  const carouselRef = useRef(null)
+  const [activeIndex, setActiveIndex] = useState(0)
+  const childCount = Array.isArray(children) ? children.length : 1
+
+  useEffect(() => {
+    const carousel = carouselRef.current
+    if (!carousel) return
+
+    const handleScroll = () => {
+      const scrollLeft = carousel.scrollLeft
+      const cardWidth = carousel.firstElementChild?.offsetWidth || 0
+      const gap = 20 // 1.25rem gap
+      const index = Math.round(scrollLeft / (cardWidth + gap))
+      setActiveIndex(Math.min(index, childCount - 1))
+    }
+
+    carousel.addEventListener('scroll', handleScroll, { passive: true })
+    return () => carousel.removeEventListener('scroll', handleScroll)
+  }, [childCount])
+
+  return (
+    <>
+      <div ref={carouselRef} className={`carousel ${hint ? 'carousel-hint' : ''}`}>
+        {children}
+      </div>
+      <div className="carousel-indicators">
+        {Array.from({ length: childCount }).map((_, i) => (
+          <div
+            key={i}
+            className={`carousel-dot ${activeIndex === i ? 'active' : ''}`}
+          />
+        ))}
+      </div>
+    </>
+  )
+}
 
 // ==================== PIN DIALOG ====================
 
@@ -255,7 +295,7 @@ const CartaNatalSection = () => (
       <div className="mb-8">
         <h3 className="title-section text-center mb-4">1. La Tríada de Personalidad</h3>
 
-        <div className="carousel carousel-hint">
+        <Carousel hint>
           {/* Sol */}
           <div className="carousel-card glass-card">
             <div className="flex items-start gap-3 mb-4">
@@ -309,12 +349,7 @@ const CartaNatalSection = () => (
               <p className="body-secondary"><span className="accent-cyan font-medium">La Misión:</span> Tu Ascendente te pide libertad. Vienes a romper moldes preestablecidos.</p>
             </div>
           </div>
-        </div>
-        <div className="carousel-indicators">
-          <div className="carousel-dot active" />
-          <div className="carousel-dot" />
-          <div className="carousel-dot" />
-        </div>
+        </Carousel>
       </div>
 
       <div className="divider" />
@@ -323,7 +358,7 @@ const CartaNatalSection = () => (
       <div className="mb-8">
         <h3 className="title-section text-center mb-4">2. Los Planetas Personales</h3>
 
-        <div className="carousel">
+        <Carousel>
           <div className="carousel-card glass-card">
             <div className="flex items-start gap-3 mb-3">
               <div className="icon-box"><Brain className="accent-purple" /></div>
@@ -358,12 +393,7 @@ const CartaNatalSection = () => (
             <p className="title-item accent-red">El Guerrero Eficiente</p>
             <p className="body-secondary">Tu energía no es explosiva, es quirúrgica. Eres excelente resolviendo problemas complejos. Tu fuerza radica en el detalle y el análisis.</p>
           </div>
-        </div>
-        <div className="carousel-indicators">
-          <div className="carousel-dot active" />
-          <div className="carousel-dot" />
-          <div className="carousel-dot" />
-        </div>
+        </Carousel>
       </div>
 
       <div className="divider" />
@@ -372,7 +402,7 @@ const CartaNatalSection = () => (
       <div className="mb-8">
         <h3 className="title-section text-center mb-4">3. Los Puntos Kármicos</h3>
 
-        <div className="carousel">
+        <Carousel>
           <div className="carousel-card glass-card">
             <div className="flex items-start gap-3 mb-3">
               <div className="icon-box"><Target className="accent-emerald" /></div>
@@ -408,12 +438,7 @@ const CartaNatalSection = () => (
             </div>
             <p className="body-secondary">La madurez llega a través de la profundidad filosófica. Estás construyendo una sabiduría sólida, forjada por experiencia e introspección.</p>
           </div>
-        </div>
-        <div className="carousel-indicators">
-          <div className="carousel-dot active" />
-          <div className="carousel-dot" />
-          <div className="carousel-dot" />
-        </div>
+        </Carousel>
       </div>
 
       <div className="divider" />
