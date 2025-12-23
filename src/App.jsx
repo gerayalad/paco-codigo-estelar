@@ -1,6 +1,70 @@
 import { useState, useEffect } from 'react'
-import { Sun, Moon, Compass, Brain, Heart, Zap, Target, Sparkles, Eye, Star, Home, MapPin, Hash, Gift, Calendar } from 'lucide-react'
+import { Sun, Moon, Compass, Brain, Heart, Zap, Target, Sparkles, Eye, Star, Home, MapPin, Hash, Gift, Calendar, Lock } from 'lucide-react'
 import './index.css'
+
+// ==================== PIN DIALOG ====================
+
+const PinDialog = ({ onSuccess }) => {
+  const [pin, setPin] = useState('')
+  const [error, setError] = useState(false)
+  const correctPin = '7235'
+
+  const handleDigit = (digit) => {
+    if (pin.length < 4) {
+      const newPin = pin + digit
+      setPin(newPin)
+      setError(false)
+
+      if (newPin.length === 4) {
+        if (newPin === correctPin) {
+          setTimeout(() => onSuccess(), 300)
+        } else {
+          setError(true)
+          setTimeout(() => setPin(''), 500)
+        }
+      }
+    }
+  }
+
+  const handleDelete = () => {
+    setPin(pin.slice(0, -1))
+    setError(false)
+  }
+
+  return (
+    <div className="pin-overlay">
+      <div className="pin-dialog">
+        <div className="pin-icon">
+          <Lock />
+        </div>
+        <h2 className="pin-title">Ingresa tu PIN</h2>
+        <p className="pin-subtitle">Para acceder a tu código estelar</p>
+
+        <div className="pin-dots">
+          {[0, 1, 2, 3].map((i) => (
+            <div
+              key={i}
+              className={`pin-dot ${pin.length > i ? 'filled' : ''} ${error ? 'error' : ''}`}
+            />
+          ))}
+        </div>
+
+        <div className="pin-keypad">
+          {[1, 2, 3, 4, 5, 6, 7, 8, 9, null, 0, 'del'].map((key, i) => (
+            <button
+              key={i}
+              className={`pin-key ${key === null ? 'invisible' : ''} ${key === 'del' ? 'pin-key-del' : ''}`}
+              onClick={() => key === 'del' ? handleDelete() : key !== null && handleDigit(String(key))}
+              disabled={key === null}
+            >
+              {key === 'del' ? '⌫' : key}
+            </button>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
 
 // ==================== NAVIGATION ====================
 
@@ -620,9 +684,12 @@ const Footer = () => (
 // ==================== MAIN APP ====================
 
 function App() {
+  const [unlocked, setUnlocked] = useState(false)
   const [activeSection, setActiveSection] = useState('inicio')
 
   useEffect(() => {
+    if (!unlocked) return
+
     const handleScroll = () => {
       const sections = ['inicio', 'carta', 'numeros', '2026', 'regalos']
       const scrollPosition = window.scrollY + 100
@@ -641,7 +708,16 @@ function App() {
 
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  }, [unlocked])
+
+  if (!unlocked) {
+    return (
+      <>
+        <CosmicBackground />
+        <PinDialog onSuccess={() => setUnlocked(true)} />
+      </>
+    )
+  }
 
   return (
     <div className="min-h-screen">
