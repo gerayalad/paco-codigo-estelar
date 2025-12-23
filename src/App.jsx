@@ -249,7 +249,7 @@ const HeroSection = () => (
         <p className="label accent-cyan mb-3">Tu Código Estelar</p>
         <h1 className="title-main">Resumen Estelar:<br />Tu Siguiente Capítulo</h1>
         <p className="body-secondary mt-4" style={{ maxWidth: '540px', margin: '1rem auto 0' }}>
-          Este es tu mapa personal basado en astrología y numerología. Explora tu <span className="accent-cyan">Carta Natal</span>, descubre tus <span className="accent-purple">Números del Destino</span>, conoce la energía de tu <span className="accent-gold">Año Personal 2025</span>, y encuentra tus <span className="accent-pink">Regalos Energéticos</span>.
+          Este es tu mapa personal basado en astrología y numerología. Explora tu <span className="accent-cyan">Carta Natal</span>, descubre tus <span className="accent-purple">Números del Destino</span>, conoce la energía de tu <span className="accent-gold">2026</span>, y encuentra tus <span className="accent-pink">Regalos Energéticos</span>.
         </p>
       </div>
 
@@ -530,16 +530,19 @@ const AnoPersonalSection = () => (
   <section id="2026" className="section">
     <div className="container">
       <div className="section-header">
-        <p className="label mb-2">El Ciclo Actual</p>
-        <h2 className="title-section">Año Personal 2025: 11</h2>
+        <p className="label mb-2">Tu Energía para 2026</p>
+        <h2 className="title-section">Año Personal: 11</h2>
         <p className="subtitle">Número Maestro</p>
       </div>
 
-      {/* Cálculo */}
+      {/* Explicación */}
       <div className="glass-card mb-6">
-        <p className="title-item accent-cyan mb-3">Cálculo</p>
-        <p className="body-secondary">
-          Mes 11 + Día 9 + Año universal 2025 (2+0+2+5=9) → 11 + 9 + 9 = 29 → 2+9 = <span className="accent-purple font-semibold">11</span> (NO se reduce).
+        <p className="title-item accent-gold mb-3">¿Por qué 2025 si es para 2026?</p>
+        <p className="body-secondary mb-3">
+          En numerología, el Año Personal se calcula con el <span className="accent-gold font-medium">año universal</span> (2025), pero se vive principalmente <span className="accent-cyan font-medium">de cumpleaños a cumpleaños</span>. Como tu cumpleaños es en noviembre, esta energía 11 te acompañará desde <span className="font-medium">noviembre 2025 hasta noviembre 2026</span>.
+        </p>
+        <p className="body-secondary" style={{ opacity: 0.7 }}>
+          <span className="accent-purple font-medium">Cálculo:</span> Mes 11 + Día 9 + Año 2025 (2+0+2+5=9) → 11 + 9 + 9 = 29 → 2+9 = <span className="accent-purple font-semibold">11</span> (número maestro, no se reduce).
         </p>
       </div>
 
