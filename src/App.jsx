@@ -259,7 +259,7 @@ const HeroSection = () => (
         </p>
 
         <p className="body-text accent-gold" style={{ fontWeight: 500 }}>
-Tus astros te invitan hoy a soltar el refugio de tus raíces y tener la valentía de extender tus ramas hacia el cielo.        </p>
+Tus astros te invitan hoy a soltar el refugio de tus raíces y tener la valentía de extender tus ramas hacia lo alto.        </p>
 
         <p className="body-text">
           Ya dominas el arte de cuidar y sostener a los demás; lo haces con maestría. Ahora, el universo te invita a que uses esa misma fuerza para construir tus propios sueños y tu propio legado <span className="inline-accent">(Sol en Escorpio/Casa 10)</span>. No se trata de elegir entre ellos o tú; se trata de entender que tú también mereces ese cuidado y esa dedicación que le das a todos.
