@@ -110,6 +110,9 @@ const PinDialog = ({ onSuccess }) => {
 
 const CoverScreen = ({ onEnter }) => {
   const [isExiting, setIsExiting] = useState(false)
+  const [videoLoaded, setVideoLoaded] = useState(false)
+  const [loadProgress, setLoadProgress] = useState(0)
+  const videoRef = useRef(null)
 
   const handleEnter = () => {
     setIsExiting(true)
@@ -119,33 +122,64 @@ const CoverScreen = ({ onEnter }) => {
   }
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50 && !isExiting) {
-        handleEnter()
+    const video = videoRef.current
+    if (!video) return
+
+    const handleProgress = () => {
+      if (video.buffered.length > 0) {
+        const bufferedEnd = video.buffered.end(video.buffered.length - 1)
+        const duration = video.duration
+        if (duration > 0) {
+          const percent = Math.round((bufferedEnd / duration) * 100)
+          setLoadProgress(percent)
+        }
       }
     }
 
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [isExiting])
+    const handleCanPlay = () => {
+      setLoadProgress(100)
+      setTimeout(() => setVideoLoaded(true), 300)
+    }
+
+    video.addEventListener('progress', handleProgress)
+    video.addEventListener('canplaythrough', handleCanPlay)
+
+    return () => {
+      video.removeEventListener('progress', handleProgress)
+      video.removeEventListener('canplaythrough', handleCanPlay)
+    }
+  }, [])
 
   return (
     <div className={`cover-screen ${isExiting ? 'cover-exit' : ''}`}>
-      <div className="cover-video-wrapper">
+      {/* Imagen de fondo mientras carga */}
+      <div className={`cover-poster ${videoLoaded ? 'hidden' : ''}`}>
+        <img src="/front.png" alt="Portada" className="cover-poster-img" />
+        <div className="cover-loading">
+          <div className="cover-loading-bar">
+            <div className="cover-loading-fill" style={{ width: `${loadProgress}%` }} />
+          </div>
+          <span className="cover-loading-text">{loadProgress}%</span>
+        </div>
+      </div>
+
+      {/* Video */}
+      <div className={`cover-video-wrapper ${videoLoaded ? 'visible' : ''}`}>
         <video
+          ref={videoRef}
           className="cover-video"
           autoPlay
           muted
           loop
           playsInline
-          poster="/front.png"
         >
           <source src="/video_front.mp4" type="video/mp4" />
         </video>
       </div>
+
       <div className="cover-overlay" />
-      <button className="cover-scroll-indicator" onClick={handleEnter}>
-        <span>Desliza para explorar</span>
+      <button className={`cover-scroll-indicator ${videoLoaded ? 'visible' : ''}`} onClick={handleEnter}>
+        <span>Toca para explorar</span>
         <ChevronDown className="cover-chevron" />
       </button>
     </div>
