@@ -154,7 +154,7 @@ const CoverScreen = ({ onEnter }) => {
     <div className={`cover-screen ${isExiting ? 'cover-exit' : ''}`}>
       {/* Imagen de fondo mientras carga */}
       <div className={`cover-poster ${videoLoaded ? 'hidden' : ''}`}>
-        <img src="/front.png" alt="Portada" className="cover-poster-img" />
+        <img src="/front_2.png" alt="Portada" className="cover-poster-img" />
         <div className="cover-loading">
           <div className="cover-loading-bar">
             <div className="cover-loading-fill" style={{ width: `${loadProgress}%` }} />
@@ -173,7 +173,7 @@ const CoverScreen = ({ onEnter }) => {
           loop
           playsInline
         >
-          <source src="/video_front.mp4" type="video/mp4" />
+          <source src="/video_front_2.mp4" type="video/mp4" />
         </video>
       </div>
 
@@ -352,14 +352,14 @@ const HeroSection = () => (
 
       <div className="glass-card-highlight stack-md fade-in">
         <p className="body-text">
-          Paco, tu carta natal muestra a un hombre con un corazón inmenso, que ha sido el pilar firme y amoroso para los suyos <span className="inline-accent">(Luna en Tauro)</span>. Eso es un don: tener raíces fuertes es lo que permite a los grandes árboles crecer alto.
+          Paco, tu carta natal muestra a un hombre con un corazón inmenso, que ha sido el sostén emocional de su entorno <span className="inline-accent">(Luna en Libra/Casa 8)</span>. Eso es un don: tu capacidad de mediar y armonizar es lo que mantiene unidos a los tuyos.
         </p>
 
         <p className="body-text accent-gold" style={{ fontWeight: 500 }}>
-Tus astros te invitan hoy a soltar el refugio de tus raíces y tener la valentía de extender tus ramas hacia lo alto.        </p>
+Tus astros te invitan hoy a dejar de cargar las emociones del mundo y construir tu propia paz.        </p>
 
         <p className="body-text">
-          Ya dominas el arte de cuidar y sostener a los demás; lo haces con maestría. Ahora, el universo te invita a que uses esa misma fuerza para construir tus propios sueños y tu propio legado <span className="inline-accent">(Sol en Escorpio/Casa 10)</span>. No se trata de elegir entre ellos o tú; se trata de entender que tú también mereces ese cuidado y esa dedicación que le das a todos.
+          Ya dominas el arte de cuidar y sostener a los demás; lo haces con maestría. Ahora, el universo te invita a que uses esa misma fuerza para construir tus propios sueños y tu propio legado <span className="inline-accent">(Sol en Escorpio/Casa 9)</span>. No se trata de elegir entre ellos o tú; se trata de entender que tú también mereces ese cuidado y esa dedicación que le das a todos.
         </p>
       </div>
     </div>
@@ -372,7 +372,7 @@ const CartaNatalSection = () => (
       <div className="section-header">
         <p className="label mb-2">Carta Natal</p>
         <h2 className="title-section">El Código del Alma</h2>
-        <p className="subtitle">Paco Guadalupe • El Constructor de Legado</p>
+        <p className="subtitle">Paco Guadalupe • El Guardián Diplomático</p>
       </div>
 
       {/* Intro */}
@@ -403,13 +403,14 @@ const CartaNatalSection = () => (
               </div>
               <div>
                 <p className="title-card accent-gold">Tu Esencia</p>
-                <p className="subtitle">Sol en Escorpio (Casa 10)</p>
+                <p className="subtitle">Sol en Escorpio (Casa 9)</p>
               </div>
             </div>
-            <p className="title-item accent-gold">La Autoridad Natural</p>
+            <p className="title-item accent-gold">El Buscador de la Verdad</p>
             <div className="stack-xs">
-              <p className="body-secondary">Tu identidad no está diseñada para la vida doméstica o anónima. Posees una ambición latente y capacidad de liderazgo.</p>
-              <p className="body-secondary"><span className="accent-gold font-medium">El Arquetipo:</span> Eres el estratega. Tu energía es intensa, controlada y magnética. Tu alma pide respeto y reconocimiento profesional.</p>
+              <p className="body-secondary">Tu identidad central es magnética, reservada y leal hasta la médula. Al estar en la Casa 9, tu naturaleza Escorpio se eleva: no eres alguien que se queda en el rencor, sino alguien que busca el "porqué" de las cosas.</p>
+              <p className="body-secondary"><span className="accent-gold font-medium">Tu Energía:</span> Eres un detector natural de autenticidad. Sabes instintivamente quién es real y quién finge.</p>
+              <p className="body-secondary"><span className="accent-gold font-medium">Tu Rol:</span> Tienes la capacidad de sostener situaciones de crisis con una calma inusual. Eres el consejero silencioso y sabio.</p>
             </div>
           </div>
 
@@ -420,14 +421,15 @@ const CartaNatalSection = () => (
                 <Moon className="accent-purple" />
               </div>
               <div>
-                <p className="title-card accent-purple">Tu Refugio</p>
-                <p className="subtitle">Luna en Tauro (Casa 4)</p>
+                <p className="title-card accent-purple">Tu Mundo Emocional</p>
+                <p className="subtitle">Luna en Libra (Casa 8)</p>
               </div>
             </div>
-            <p className="title-item accent-purple">El Guardián de las Raíces</p>
+            <p className="title-item accent-purple">El Mediador del Alma</p>
             <div className="stack-xs">
-              <p className="body-secondary">Aquí reside tu corazón. Tienes una necesidad instintiva de proteger el "nido". Eres el ancla de los tuyos.</p>
-              <p className="body-secondary"><span className="accent-purple font-medium">El reto:</span> Esta Luna puede volverse inamovible, haciendo que te resistas a cambios necesarios.</p>
+              <p className="body-secondary">Aquí reside tu corazón y tu instinto. La Luna en Libra necesita paz, belleza y justicia para sentirse segura. Al ubicarse en la Casa 8, tu empatía no tiene barreras.</p>
+              <p className="body-secondary"><span className="accent-purple font-medium">El Don:</span> Sientes las emociones de tu entorno como si fueran tuyas. Tienes un talento innato para la diplomacia y para suavizar conflictos.</p>
+              <p className="body-secondary"><span className="accent-purple font-medium">El Desafío:</span> Tu bienestar emocional depende del equilibrio de tus relaciones cercanas. Te cuesta poner límites firmes porque temes romper la armonía.</p>
             </div>
           </div>
 
@@ -444,8 +446,8 @@ const CartaNatalSection = () => (
             </div>
             <p className="title-item accent-cyan">El Visionario Independiente</p>
             <div className="stack-xs">
-              <p className="body-secondary">El mundo te percibe como alguien mental, original y con perspectiva única.</p>
-              <p className="body-secondary"><span className="accent-cyan font-medium">La Misión:</span> Tu Ascendente te pide libertad. Vienes a romper moldes preestablecidos.</p>
+              <p className="body-secondary">Esta es la energía hacia la cual evoluciona tu alma. Aunque por dentro eres intenso y emotivo, el mundo te percibe como alguien mental, original y con una perspectiva única.</p>
+              <p className="body-secondary"><span className="accent-cyan font-medium">La Misión:</span> Tu Ascendente te pide Independencia y Libertad Mental. Vienes a aprender a desapegarte un poco del drama emocional para mirar el futuro con visión objetiva. Tu camino es romper moldes y atreverte a ser diferente.</p>
             </div>
           </div>
         </Carousel>
@@ -463,34 +465,37 @@ const CartaNatalSection = () => (
               <div className="icon-box"><Brain className="accent-purple" /></div>
               <div>
                 <p className="title-card">☿ Tu Mente</p>
-                <p className="subtitle">Mercurio en Escorpio</p>
+                <p className="subtitle">Mercurio en Sagitario</p>
               </div>
             </div>
-            <p className="body-secondary">Posees una inteligencia penetrante. Tu mente funciona como un escáner que detecta lo que no se dice. Eres un investigador nato de la psique humana.</p>
+            <p className="body-secondary">Tu pensamiento es libre, optimista y directo. Tienes sed de conocimiento y una mente que siempre busca el sentido mayor de la vida.</p>
+            <p className="body-secondary"><span className="accent-purple font-medium">Cómo te comunicas:</span> Te aburre lo trivial. Necesitas conversaciones que expandan tu mente. Eres un eterno estudiante y un filósofo natural.</p>
           </div>
 
           <div className="carousel-card glass-card">
             <div className="flex items-start gap-3 mb-3">
               <div className="icon-box"><Heart className="accent-pink" /></div>
               <div>
-                <p className="title-card">♀ Tu Deseo</p>
-                <p className="subtitle">Venus en Libra (Casa 9)</p>
+                <p className="title-card">❤️ Tu Deseo</p>
+                <p className="subtitle">Venus en Escorpio</p>
               </div>
             </div>
-            <p className="title-item accent-pink">El Idealista del Amor</p>
-            <p className="body-secondary">No buscas una relación convencional, buscas una conexión que expanda tu mente. Prefieres la soledad digna antes que una compañía que traiga conflicto.</p>
+            <p className="title-item accent-pink">El Amor Absoluto</p>
+            <p className="body-secondary">Venus en Escorpio no entiende de tibiezas; para ti, el amor es una fusión total de almas o no es nada.</p>
+            <p className="body-secondary"><span className="accent-pink font-medium">Tu Estándar:</span> Tienes una necesidad de lealtad inquebrantable. Eres extremadamente selectivo porque entregas todo. Prefieres la soledad digna antes que una compañía superficial.</p>
           </div>
 
           <div className="carousel-card glass-card">
             <div className="flex items-start gap-3 mb-3">
               <div className="icon-box"><Zap className="accent-red" /></div>
               <div>
-                <p className="title-card">♂ Tu Acción</p>
-                <p className="subtitle">Marte en Virgo (Casa 8)</p>
+                <p className="title-card">⚔️ Tu Acción</p>
+                <p className="subtitle">Marte en Libra</p>
               </div>
             </div>
-            <p className="title-item accent-red">El Guerrero Eficiente</p>
-            <p className="body-secondary">Tu energía no es explosiva, es quirúrgica. Eres excelente resolviendo problemas complejos. Tu fuerza radica en el detalle y el análisis.</p>
+            <p className="title-item accent-red">El Estratega Pacífico</p>
+            <p className="body-secondary">Tu motor de acción funciona a través del intelecto y la cooperación. Te cuesta tomar decisiones de forma impulsiva o egoísta.</p>
+            <p className="body-secondary"><span className="accent-red font-medium">El Freno:</span> Antes de dar un paso, analizas cómo afectará a los demás. Tu gran lección es aprender a afirmar tu voluntad y decir "esto es lo que yo quiero".</p>
           </div>
         </Carousel>
       </div>
@@ -506,13 +511,13 @@ const CartaNatalSection = () => (
             <div className="flex items-start gap-3 mb-3">
               <div className="icon-box"><Target className="accent-emerald" /></div>
               <div>
-                <p className="title-card accent-emerald">☊ Eje del Destino</p>
-                <p className="subtitle">Nodos en Escorpio/Tauro</p>
+                <p className="title-card accent-emerald">☊ Tu Evolución</p>
+                <p className="subtitle">Nodo Norte en Tauro / Nodo Sur en Escorpio</p>
               </div>
             </div>
             <div className="stack-xs">
-              <p className="body-secondary"><strong>Zona de Confort:</strong> Vienes de vidas marcadas por protección del hogar y seguridad material.</p>
-              <p className="body-secondary"><span className="accent-emerald font-medium">Misión Evolutiva:</span> El universo te empuja a salir del nido. Tienes un legado que construir fuera del hogar.</p>
+              <p className="body-secondary"><strong>Tu Zona de Confort (Nodo Sur):</strong> Tu alma ya conoce la intensidad, el manejo de crisis y la fusión emocional con otros. Tienes una tendencia inconsciente a complicarte la vida o a cargar con pesos psicológicos ajenos.</p>
+              <p className="body-secondary"><span className="accent-emerald font-medium">Tu Misión (Nodo Norte):</span> El universo te empuja hacia la SIMPLICIDAD. Vienes a aprender a disfrutar de la calma, a conectar con la tierra y a cultivar una paz inamovible.</p>
             </div>
           </div>
 
@@ -521,10 +526,11 @@ const CartaNatalSection = () => (
               <div className="icon-box"><Eye className="accent-purple" /></div>
               <div>
                 <p className="title-card accent-purple">⚸ Tu Sombra</p>
-                <p className="subtitle">Lilith en Aries (Casa 2)</p>
+                <p className="subtitle">Lilith en Tauro</p>
               </div>
             </div>
-            <p className="body-secondary">Hay una lucha oculta con tu sentido de merecimiento. Sanar esto implica reconocer tu valor sin necesitar validación externa.</p>
+            <p className="body-secondary">Existe un bloqueo sutil relacionado con el merecimiento y el disfrute. Puede haber una voz interna que te hace sentir culpa por disfrutar de los placeres materiales o por ponerte a ti primero.</p>
+            <p className="body-secondary"><span className="accent-purple font-medium">La Sanación:</span> Reconocer que tu gozo y tu abundancia son derechos de nacimiento.</p>
           </div>
 
           <div className="carousel-card glass-card">
@@ -535,7 +541,7 @@ const CartaNatalSection = () => (
                 <p className="subtitle">Saturno en Escorpio</p>
               </div>
             </div>
-            <p className="body-secondary">La madurez llega a través de la profundidad filosófica. Estás construyendo una sabiduría sólida, forjada por experiencia e introspección.</p>
+            <p className="body-secondary">La madurez en tu vida llega a través de la transformación profunda. Saturno te ha enseñado a ser responsable y resistente ante las pruebas emocionales. Ahora, te pide que uses esa fortaleza para estructurar tu propio poder personal.</p>
           </div>
         </Carousel>
       </div>
@@ -552,7 +558,7 @@ const CartaNatalSection = () => (
 
         <div className="glass-card">
           <p className="title-card accent-gold mb-2">Resumen Estelar</p>
-          <p className="body-text accent-gold">Tienes las raíces de un roble (Tauro) pero la visión de un águila (Escorpio/Acuario). Tienes el permiso cósmico para reclamar tu lugar en el mundo.</p>
+          <p className="body-text accent-gold">Tu carta describe el viaje de un alma que ha sido el sostén emocional de su entorno (Luna en Libra), hacia un destino de paz personal (Nodo Norte en Tauro). Tienes permiso cósmico para estar bien y disfrutar de lo simple.</p>
         </div>
       </div>
     </div>
